@@ -16,17 +16,17 @@ import java.util.List;
 public class ToDoRestApplication implements CommandLineRunner {
 
   @Autowired
-	private ToDoUserRepository toDoUserRepository;
+  private ToDoUserRepository toDoUserRepository;
 
   @Autowired
   private ToDoItemRepository toDoItemRepository;
 
-	public static void main(String[] args) {
-		SpringApplication.run(ToDoRestApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(ToDoRestApplication.class, args);
+  }
 
-	@Override
-	public void run(String... strings) throws Exception {
+  @Override
+  public void run(String... strings) throws Exception {
     ToDoUser dmytro = new ToDoUser();
     ToDoUser marina = new ToDoUser();
 
