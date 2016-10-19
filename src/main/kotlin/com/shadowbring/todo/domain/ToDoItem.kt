@@ -8,15 +8,12 @@ data class ToDoItem(
 
         @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "itemSequence")
-        private var id: Long = 0,
+        var id: Long = 0,
 
-        @Column(nullable = false)
         var description: String = "",
-
-        @Column(nullable = false)
         var done: Boolean = false,
 
-        @ManyToOne(optional = false)
+        @ManyToOne(optional = false, fetch = FetchType.EAGER)
         @JoinColumn(name = "toDoUserId")
-        private var toDoUser: ToDoUser = ToDoUser()
+        var toDoUser: ToDoUser = ToDoUser()
 )

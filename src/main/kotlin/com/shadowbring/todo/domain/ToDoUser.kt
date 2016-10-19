@@ -9,11 +9,10 @@ data class ToDoUser(
 
         @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userSequence")
-        private var id: Long = 0,
+        var id: Long = 0,
 
-        @Column(nullable = false)
-        private var name: String = "",
+        var name: String = "",
 
-        @OneToMany(mappedBy = "toDoUser")
-        private var toDoItems: List<ToDoItem> = ArrayList()
+        @OneToMany(mappedBy = "toDoUser", fetch = FetchType.EAGER)
+        var toDoItems: List<ToDoItem> = ArrayList()
 )
